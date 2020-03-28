@@ -9,7 +9,7 @@ import Login from '../components/auth/login';
 
 const Stack = createStackNavigator();
 
-export default function Routes({ signedIn = false }) {
+export default function Routes({ signedIn = true }) {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none" initialRouteName={signedIn ? "App" : "SignIn"}>

@@ -1,13 +1,18 @@
 import React from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+import Dashboard from '../components/dashboard';
+
+const Tab = createBottomTabNavigator();
 
 function AppRoutes() {
   const tabBarOptions = {
     keyboardHidesTabBar: true,
     activeTintColor: '#FFF',
-    inactiveTintColor: 'rgba(255, 255, 255, 0.6)',
+    inactiveTintColor: '#47E3FF',
     style: {
-      backgroundColor: '#8d41a8'
+      backgroundColor: '#0E2D33'
     }
   }
 
@@ -15,17 +20,22 @@ function AppRoutes() {
     <Tab.Navigator tabBarOptions={tabBarOptions} initialRouteName="Dashboard">
       <Tab.Screen
         name="Dashboard"
-        options={{ tabBarLabel: 'Agendamentos', tabBarIcon: () => <Icon name="event" size={20} color="#FFF" /> }}
+        options={{ tabBarLabel: 'Agendamentos', tabBarIcon: () => <Icon name="event" size={20} color="#47E3FF" /> }}
         component={Dashboard} />
 
       <Tab.Screen
         name="New"
-        options={{ tabBarVisible: false, tabBarIcon: () => <Icon name="add-circle-outline" size={20} color="rgba(255, 255, 255,0.6)" /> }} component={NewRoutes} />
+        options={{ tabBarIcon: () => <Icon name="add-circle-outline" size={20} color="#47E3FF" /> }} component={Dashboard} />
+
+      <Tab.Screen
+        name="Pets"
+        options={{ tabBarLabel: 'Pets', tabBarIcon: ({ tintColor }) => (<Icon name="pets" size={20} color="#47E3FF" />) }}
+        component={Dashboard} />
 
       <Tab.Screen
         name="Profile"
-        options={{ tabBarLabel: 'Perfil', tabBarIcon: ({ tintColor }) => (<Icon name="person" size={20} color="#FFF" />) }}
-        component={Profile} />
+        options={{ tabBarLabel: 'Perfil', tabBarIcon: ({ tintColor }) => (<Icon name="person" size={20} color="#47E3FF" />) }}
+        component={Dashboard} />
     </Tab.Navigator>
   );
 }
