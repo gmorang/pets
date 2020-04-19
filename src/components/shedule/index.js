@@ -1,10 +1,9 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 
-import { Text, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import { Container, Header, Title, Avatar, Content, TextContent, InformationRow, InformationItem, HeaderBox, StatusText, ServiceBox, ServiceItem } from './styles';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Container, Header, Title, Avatar, TextContent, InformationRow, InformationItem, HeaderBox, StatusText, ServiceBox, ServiceItem } from './styles';
 
 export default function Schedule() {
   return (
