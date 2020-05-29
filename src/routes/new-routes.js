@@ -1,7 +1,17 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 
-function NewRoutes() {
+import { createStackNavigator } from '@react-navigation/stack';
+
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
+import SelectProvider from '../components/new-schedule/select-provider';
+import SelectDateTime from '../components/new-schedule/select-date-time';
+import ConfirmRequest from '../components/new-schedule/confirm';
+
+const Stack = createStackNavigator();
+
+export default function NewRoutes() {
   return (
     <Stack.Navigator
       screenOptions={({ navigation }) => ({
@@ -21,5 +31,3 @@ function NewRoutes() {
     </Stack.Navigator>
   )
 }
-
-export default NewRoutes;
